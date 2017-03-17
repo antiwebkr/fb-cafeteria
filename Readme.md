@@ -1,7 +1,7 @@
 # Facebook Cafeteria
 Facebook Page today's meal auto posting
 
-##Installation
+## Installation
 ```sh
 $ sudo npm install -g
 ```
@@ -26,7 +26,7 @@ $ npm run fb
 this.userID = "userID"; // Your facebook account id
 this.userPW = "userPW"; // Your facebook account pw
 this.pageURL = "facebookURL"; // Your facebook page url
-this.user_agent = "userAgent"; // user-agent setting
+this.user_agent = "userAgent"; // User-agent setting
 ```
 
 `fbCafeteria.js` Cron Setting

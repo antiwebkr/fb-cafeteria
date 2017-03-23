@@ -38,7 +38,7 @@ export class fbCafeteria extends fbAccount {
 					// Cafeteria arguments your school code!
 					new Cafeteria("B100000662").parseCafeteria()
 						.then((cafeteria) => {
-							this.pagePost(body, cafeteria)
+							this.pagePost(body, "[한세사이버보안고등학교 급식정보]\n\n" + cafeteria + "\n\nPosted by antiweb<admin@hepstar.kr>")
 							.then(() => {
 								console.log("Facebook Page Post Success!");
 							})
@@ -51,7 +51,7 @@ export class fbCafeteria extends fbAccount {
 		return new Promise((resolve, reject) => {
 			let $ = cheerio.load(body);
 			let fb_dtsg = $("input[name='fb_dtsg']").val();
-			let pageID = body.match(/"pageID":["]([0-9]){15,}["]/g)[0].substr(10).slice(0, -1);
+			let pageID = body.match(/"pageID":([0-9]){15,}/g)[0].substr(9);
 			let c_user = parse(this.cookie[5])['c_user'];
 
 			request.post({
